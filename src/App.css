@@ -1,38 +1,230 @@
-.App {
-  text-align: center;
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 30px;
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 15px;
+  color: #1a8fc4;
+  cursor: pointer;
+  text-decoration: none;
+  justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar-logo svg,
+.navbar-logo img {
+  width: 22px;
+  height: 22px;
+  fill: #1a8fc4;
 }
 
-.App-header {
-  background-color: #282c34;
+.navbar-icons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo-text {
+  color: #8cd6f8;
+}
+
+.navbar-icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #1a8fc4;
+  font-size: 18px;
+  padding: 6px;
+  border-radius: 50%;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-icon-btn:hover {
+  background: rgba(26, 143, 196, 0.1);
+}
+
+/* ===== LANDING PAGE ===== */
+.landing-page {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
+}
+
+.landing-content {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 0 20px;
+  margin-top: -80px;
 }
 
-.App-link {
-  color: #61dafb;
+.landing-search-wrapper {
+  width: 100%;
+  max-width: 480px;
+  margin-bottom: 40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.landing-brand h1 {
+  font-size: 72px;
+  font-weight: 900;
+  color: #c8e2ef;
+  letter-spacing: -2px;
+  text-align: center;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.landing-brand p {
+  font-size: 14px;
+  color: #c8e2ef;
+  text-align: center;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* ===== RESULTS PAGE ===== */
+.results-page {
+  min-height: 100vh;
+}
+
+.results-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 30px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.results-navbar-left {
+  flex: 1;
+  max-width: 320px;
+}
+
+.navbar-logo {
+  margin-left: 20px;
+}
+
+.results-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 30px 40px;
+}
+
+/* ===== WEATHER DETAILS GRID ===== */
+.weather-bottom-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.detail-cards-grid {
+  grid-column: 1 / 4;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.detail-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.detail-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.detail-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #3a6a8a;
+}
+
+.detail-card-header svg,
+.detail-card-header img {
+  width: 16px;
+  height: 16px;
+  fill: #1a8fc4;
+}
+
+.detail-card-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a2a3a;
+  line-height: 1.1;
+}
+
+.detail-card-desc {
+  font-size: 11px;
+  color: #6a8a9a;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  fill: #1a8fc4;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .weather-bottom-section {
+    grid-template-columns: 1fr;
   }
-  to {
-    transform: rotate(360deg);
+
+  .detail-cards-grid {
+    grid-column: 1;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .landing-brand h1 {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 600px) {
+  .detail-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar,
+  .results-navbar {
+    padding: 10px 16px;
+  }
+
+  .results-content {
+    padding: 0 16px 30px;
+  }
+
+  .landing-brand h1 {
+    font-size: 36px;
   }
 }

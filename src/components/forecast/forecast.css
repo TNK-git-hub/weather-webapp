@@ -1,0 +1,133 @@
+.forecast-card {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    padding: 20px;
+    grid-column: 4/6;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.forecast-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.forecast-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a2a3a;
+    margin-bottom: 14px;
+}
+
+.forecast-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.accordion__button {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: transparent;
+    padding: 0;
+    width: 100%;
+}
+
+.forecast-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 4px;
+    border-radius: 10px;
+    transition: background 0.2s;
+}
+
+.forecast-row:hover {
+    background: rgba(26, 143, 196, 0.08);
+}
+
+.forecast-day {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a2a3a;
+    width: 48px;
+    text-align: left;
+}
+
+.forecast-icon {
+    width: 28px;
+    height: 28px;
+    margin-left: auto;
+}
+
+.forecast-high {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a2a3a;
+    width: 36px;
+    text-align: right;
+}
+
+.forecast-low {
+    font-size: 14px;
+    font-weight: 500;
+    color: #6a8a9a;
+    width: 36px;
+    text-align: right;
+}
+
+.accordion__panel {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    margin-bottom: 6px;
+    padding: 12px;
+    animation: fadein 0.3s ease-in;
+}
+
+.forecast-details-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.forecast-detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fd-label {
+    font-size: 12px;
+    color: #5a7a8a;
+    font-weight: 500;
+}
+
+.fd-value {
+    font-size: 12px;
+    color: #1a2a3a;
+    font-weight: 700;
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 900px) {
+    .forecast-card {
+        grid-column: 1;
+    }
+}
