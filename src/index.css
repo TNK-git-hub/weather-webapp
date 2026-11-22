@@ -16,3 +16,34 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* ===== DARK THEME TOKENS ===== */
+/* Applied when <html data-theme="dark"> (set by public/index.html and useTheme). Light theme uses the literals above. */
+:root[data-theme='dark'] {
+  --surface: rgba(18, 26, 38, 0.78);
+  --surface-strong: rgba(18, 26, 38, 0.95);
+  --surface-subtle: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.12);
+  --text-strong: #e8f1f8;
+  --text-muted: #a9bfce;
+  --text-on-photo: #c8e2ef;
+  --accent: #8cd6f8;
+  --accent-hover: rgba(140, 214, 248, 0.1);
+  --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.3);
+  --search-bg: var(--surface);
+  --search-border: rgba(255, 255, 255, 0.15);
+  --search-border-hover: rgba(255, 255, 255, 0.3);
+  --search-text: var(--text-strong);
+  --search-placeholder: var(--text-muted);
+  --search-menu-bg: var(--surface-strong);
+  --search-menu-border: var(--border);
+  --search-option-focus: var(--accent-hover);
+  --search-option-active: rgba(140, 214, 248, 0.2);
+  --search-indicator: var(--text-muted);
+  --search-indicator-hover: var(--accent);
+  color-scheme: dark;
+}
+
+:root[data-theme='dark'] body {
+  color: var(--text-strong);
+}

@@ -148,3 +148,34 @@
         justify-content: flex-start;
     }
 }
+
+/* ===== DARK THEME ===== */
+/* Small status line sits directly on the photo: brighter colour keeps >= 4.5:1 (NFR-01). */
+[data-theme='dark'] .status-text {
+    color: var(--text-on-photo);
+}
+
+[data-theme='dark'] .current-weather-right {
+    background: var(--surface);
+    border-color: var(--border);
+}
+
+[data-theme='dark'] .main-temp {
+    color: var(--text-strong);
+}
+
+[data-theme='dark'] .high,
+[data-theme='dark'] .low {
+    color: var(--text-muted);
+}
+
+[data-theme='dark'] .temperature-toggle {
+    background: var(--surface-subtle);
+    border-color: var(--border);
+    color: var(--text-strong);
+}
+
+[data-theme='dark'] .temperature-toggle:hover {
+    background: var(--accent-hover);
+    box-shadow: var(--shadow-hover);
+}

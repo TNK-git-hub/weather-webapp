@@ -1,0 +1,161 @@
+{
+  "id": "20261122-light-dark-mode",
+  "type": "feature",
+  "workType": "code",
+  "phase": "DONE",
+  "path": "context/features/20261122-light-dark-mode",
+  "branch": "feat/20261122-light-dark-mode",
+  "mode": "subagent (T-01..T-05), inline (T-06..T-08)",
+  "gates": {
+    "spec": {
+      "state": "approved",
+      "sha256": "ee1dcec73e78942ddc8c9cd4d598a87468b8ef9c80c6c52d8d90a816fbb7f57d",
+      "at": "2026-11-22T14:01:31Z"
+    },
+    "plan": {
+      "state": "approved",
+      "sha256": "ec73bc0e61187fb7852e78c29df9372205f7a4157f963a096ad61481dfc44653",
+      "at": "2026-11-22T14:30:28Z"
+    },
+    "risk": {
+      "state": "n/a",
+      "kinds": [],
+      "at": null
+    }
+  },
+  "diffBase": "cf711721e4528a984990e401790ee3bd565b42eb",
+  "loops": {
+    "tddAttempts": 0,
+    "reviewRounds": 1
+  },
+  "evidence": [
+    {
+      "at": "2026-11-22T14:32:23Z",
+      "kind": "task",
+      "id": "T-01",
+      "command": "npm test -- src/utils/theme.test.js --watchAll=false",
+      "cwd": ".",
+      "exitCode": 0,
+      "summary": "6 passed, 0 failed"
+    },
+    {
+      "at": "2026-11-22T14:33:40Z",
+      "kind": "task",
+      "id": "T-02",
+      "command": "npm test -- src/utils/theme.test.js --watchAll=false",
+      "cwd": ".",
+      "exitCode": 0,
+      "summary": "10 passed, 0 failed"
+    },
+    {
+      "at": "2026-11-22T14:35:14Z",
+      "kind": "task",
+      "id": "T-03",
+      "command": "npm test -- src/components/theme-toggle/theme-toggle.test.js --watchAll=false",
+      "cwd": ".",
+      "exitCode": 0,
+      "summary": "3 passed, 0 failed"
+    },
+    {
+      "at": "2026-11-22T14:39:20Z",
+      "kind": "task",
+      "id": "T-04",
+      "command": "npm test -- src/App.test.js --watchAll=false",
+      "cwd": ".",
+      "exitCode": 0,
+      "summary": "3 passed, 0 failed"
+    },
+    {
+      "at": "2026-11-22T14:41:12Z",
+      "kind": "task",
+      "id": "T-05",
+      "command": "npm test -- src/utils/theme.test.js --watchAll=false",
+      "cwd": ".",
+      "exitCode": 0,
+      "summary": "16 passed, 0 failed"
+    },
+    {
+      "at": "2026-11-22T14:46:00Z",
+      "kind": "task",
+      "id": "T-06",
+      "command": "node scratchpad/contrast.js + browser check (localhost:3000)",
+      "cwd": ".",
+      "exitCode": 0,
+      "summary": "0 failing contrast pairs; landing, navbar, search menu dark; CK-02 additions only; CK-03 menu restyles open"
+    },
+    {
+      "at": "2026-11-22T14:46:00Z",
+      "kind": "task",
+      "id": "T-07",
+      "command": "browser check of results screen (fetch stubbed in tab) + git diff CSS",
+      "cwd": ".",
+      "exitCode": 0,
+      "summary": "all AC-10 surfaces dark; accordion stays open across switch; CSS additions only"
+    },
+    {
+      "at": "2026-11-22T14:46:00Z",
+      "kind": "suite",
+      "id": "T-08",
+      "command": "npm test -- --watchAll=false",
+      "cwd": ".",
+      "exitCode": 0,
+      "summary": "22 passed, 0 failed (3 suites)"
+    },
+    {
+      "at": "2026-11-22T14:46:00Z",
+      "kind": "lint",
+      "id": "T-08",
+      "command": "npx eslint src",
+      "cwd": ".",
+      "exitCode": 0,
+      "summary": "clean"
+    },
+    {
+      "at": "2026-11-22T14:46:00Z",
+      "kind": "build",
+      "id": "T-08",
+      "command": "npm run build",
+      "cwd": ".",
+      "exitCode": 0,
+      "summary": "Compiled successfully"
+    },
+    {
+      "at": "2026-11-22T14:58:29Z",
+      "kind": "suite",
+      "id": "review-r1-fixes",
+      "command": "npm test -- --watchAll=false",
+      "cwd": ".",
+      "exitCode": 0,
+      "summary": "23 passed, 0 failed (3 suites)"
+    },
+    {
+      "at": "2026-11-22T14:58:29Z",
+      "kind": "lint",
+      "id": "review-r1-fixes",
+      "command": "npx eslint src",
+      "cwd": ".",
+      "exitCode": 0,
+      "summary": "clean"
+    },
+    {
+      "at": "2026-11-22T14:58:29Z",
+      "kind": "build",
+      "id": "review-r1-fixes",
+      "command": "npm run build",
+      "cwd": ".",
+      "exitCode": 0,
+      "summary": "Compiled successfully"
+    },
+    {
+      "at": "2026-11-22T14:59:24Z",
+      "kind": "ci",
+      "id": "DELIVER",
+      "command": "gh pr create",
+      "cwd": ".",
+      "exitCode": 0,
+      "summary": "PR #1 opened; no CI configured (no .github/workflows)"
+    }
+  ],
+  "prUrl": "https://github.com/TNK-git-hub/weather-webapp/pull/1",
+  "updatedAt": "2026-11-22T14:59:24Z"
+}

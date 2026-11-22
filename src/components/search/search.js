@@ -6,9 +6,9 @@ import "./search.css";
 const customStyles = {
   control: (provided) => ({
     ...provided,
-    backgroundColor: 'rgba(255, 255, 255, 0.55)',
+    backgroundColor: 'var(--search-bg, rgba(255, 255, 255, 0.55))',
     backdropFilter: 'blur(12px)',
-    border: '1px solid rgba(255, 255, 255, 0.6)',
+    border: '1px solid var(--search-border, rgba(255, 255, 255, 0.6))',
     borderRadius: '14px',
     padding: '4px 8px',
     boxShadow: '0 2px 16px rgba(0, 0, 0, 0.06)',
@@ -16,41 +16,41 @@ const customStyles = {
     fontFamily: '"Inter", sans-serif',
     cursor: 'text',
     '&:hover': {
-      border: '1px solid rgba(255, 255, 255, 0.8)',
+      border: '1px solid var(--search-border-hover, rgba(255, 255, 255, 0.8))',
     },
   }),
   placeholder: (provided) => ({
     ...provided,
-    color: '#44545d',
+    color: 'var(--search-placeholder, #44545d)',
     fontWeight: 400,
   }),
   singleValue: (provided) => ({
     ...provided,
-    color: '#1a2a3a',
+    color: 'var(--search-text, #1a2a3a)',
     fontWeight: 500,
   }),
   input: (provided) => ({
     ...provided,
-    color: '#1a2a3a',
+    color: 'var(--search-text, #1a2a3a)',
   }),
   menu: (provided) => ({
     ...provided,
     borderRadius: '14px',
     overflow: 'hidden',
-    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+    backgroundColor: 'var(--search-menu-bg, rgba(255, 255, 255, 0.9))',
     backdropFilter: 'blur(12px)',
-    border: '1px solid rgba(255, 255, 255, 0.5)',
+    border: '1px solid var(--search-menu-border, rgba(255, 255, 255, 0.5))',
     boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
     zIndex: 100,
   }),
   option: (provided, state) => ({
     ...provided,
-    backgroundColor: state.isFocused ? 'rgba(26, 143, 196, 0.1)' : 'transparent',
-    color: '#1a2a3a',
+    backgroundColor: state.isFocused ? 'var(--search-option-focus, rgba(26, 143, 196, 0.1))' : 'transparent',
+    color: 'var(--search-text, #1a2a3a)',
     fontSize: '14px',
     cursor: 'pointer',
     '&:active': {
-      backgroundColor: 'rgba(26, 143, 196, 0.2)',
+      backgroundColor: 'var(--search-option-active, rgba(26, 143, 196, 0.2))',
     },
   }),
   indicatorSeparator: () => ({
@@ -58,9 +58,9 @@ const customStyles = {
   }),
   dropdownIndicator: (provided) => ({
     ...provided,
-    color: '#8aaabb',
+    color: 'var(--search-indicator, #8aaabb)',
     '&:hover': {
-      color: '#1a8fc4',
+      color: 'var(--search-indicator-hover, #1a8fc4)',
     },
   }),
 };

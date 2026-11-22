@@ -106,3 +106,39 @@
     font-weight: 700;
     color: #1a2a3a;
 }
+
+/* ===== DARK THEME ===== */
+[data-theme='dark'] .hourly-forecast {
+    background: var(--surface);
+    border-color: var(--border);
+}
+
+[data-theme='dark'] .hourly-forecast:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+[data-theme='dark'] .hourly-header,
+[data-theme='dark'] .hourly-temp {
+    color: var(--text-strong);
+}
+
+[data-theme='dark'] .hourly-date,
+[data-theme='dark'] .hourly-time {
+    color: var(--text-muted);
+}
+
+[data-theme='dark'] .hourly-item {
+    border-right-color: var(--border);
+}
+
+[data-theme='dark'] .hourly-item:hover {
+    background: var(--accent-hover);
+}
+
+[data-theme='dark'] .hourly-scroll {
+    scrollbar-color: rgba(140, 214, 248, 0.4) transparent;
+}
+
+[data-theme='dark'] .hourly-scroll::-webkit-scrollbar-thumb {
+    background: rgba(140, 214, 248, 0.4);
+}

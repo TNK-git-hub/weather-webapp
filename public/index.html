@@ -9,6 +9,27 @@
   <meta name="description" content="AtmosLens - Precision weather viewed through a pristine optical lens" />
   <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <script id="theme-init">
+    // Inline on purpose: must run before first paint so dark-mode users never see a light flash.
+    // The key must match THEME_STORAGE_KEY in src/utils/theme.js. Reads only, never writes storage.
+    (function () {
+      var theme = null;
+      try {
+        var saved = window.localStorage.getItem('atmoslens-theme');
+        if (saved === 'light' || saved === 'dark') {
+          theme = saved;
+        }
+      } catch (e) {}
+      if (!theme) {
+        try {
+          theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        } catch (e) {
+          theme = 'light';
+        }
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
@@ -19,6 +40,10 @@
       background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("%PUBLIC_URL%/background/bg02.jpg") no-repeat center center fixed !important;
       background-size: cover !important;
 
+    }
+    html[data-theme="dark"] body {
+      background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("%PUBLIC_URL%/background/bg02.jpg") no-repeat center center fixed !important;
+      background-size: cover !important;
     }
   </style>
 </head>
