@@ -5,14 +5,14 @@
 | ID | 20261122-light-dark-mode |
 | Type | feature |
 | Work type | code |
-| Phase | DELIVER |
+| Phase | DONE |
 | Branch | `feat/20261122-light-dark-mode` |
 | Gate 1 (spec approved) | approved on 2026-11-22T14:01:31Z (sha256 ee1dcec73e78…) |
 | Gate 2 (plan approved) | approved on 2026-11-22T14:30:28Z (sha256 ec73bc0e6118…) |
 | Risk gate | n/a |
-| PR | none |
+| PR | https://github.com/TNK-git-hub/weather-webapp/pull/1 |
 | Owner | TNK-git-hub |
-| Last updated | 2026-11-22T14:58:29Z |
+| Last updated | 2026-11-22T14:59:24Z |
 
 ## Progress
 
@@ -21,8 +21,8 @@
 - [x] Plan approved (`03-plan.md`, `04-test-cases.md`)
 - [x] Implementation complete (`05-implementation-log.md`)
 - [x] Review passed (`06-review.md`)
-- [ ] Delivered (PR or local skip)
-- [ ] Verified and done
+- [x] Delivered (PR #1, no CI configured)
+- [x] Verified and done
 
 ## Loop counters
 
@@ -35,7 +35,7 @@ Machine-readable twin: `status.json` in this folder. If the two disagree, `statu
 
 ## Next action
 
-Open a PR for `feat/20261122-light-dark-mode` (deliver-pr).
+None. Feature complete; PR #1 awaits human review and merge.
 
 ## Blockers / open questions
 

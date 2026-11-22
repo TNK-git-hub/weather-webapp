@@ -2,7 +2,7 @@
   "id": "20261122-light-dark-mode",
   "type": "feature",
   "workType": "code",
-  "phase": "DELIVER",
+  "phase": "DONE",
   "path": "context/features/20261122-light-dark-mode",
   "branch": "feat/20261122-light-dark-mode",
   "mode": "subagent (T-01..T-05), inline (T-06..T-08)",
@@ -145,8 +145,17 @@
       "cwd": ".",
       "exitCode": 0,
       "summary": "Compiled successfully"
+    },
+    {
+      "at": "2026-11-22T14:59:24Z",
+      "kind": "ci",
+      "id": "DELIVER",
+      "command": "gh pr create",
+      "cwd": ".",
+      "exitCode": 0,
+      "summary": "PR #1 opened; no CI configured (no .github/workflows)"
     }
   ],
-  "prUrl": null,
-  "updatedAt": "2026-11-22T14:58:29Z"
+  "prUrl": "https://github.com/TNK-git-hub/weather-webapp/pull/1",
+  "updatedAt": "2026-11-22T14:59:24Z"
 }
