@@ -228,3 +228,22 @@
     font-size: 36px;
   }
 }
+
+/* ===== DARK THEME ===== */
+[data-theme='dark'] .detail-card {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+[data-theme='dark'] .detail-card:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+[data-theme='dark'] .detail-card-header,
+[data-theme='dark'] .detail-card-desc {
+  color: var(--text-muted);
+}
+
+[data-theme='dark'] .detail-card-value {
+  color: var(--text-strong);
+}

@@ -3,12 +3,15 @@ import Search from './components/search/search';
 import CurrentWeather from './components/current-weather/current-weather';
 import Forecast from './components/forecast/forecast'
 import HourlyForecast from './components/forecast/hourly';
+import ThemeToggle from './components/theme-toggle/theme-toggle';
+import { useTheme } from './utils/theme';
 import { WEATHER_API_URL, WEATHER_API_KEY } from './api';
 import { useState } from 'react';
 
 
 function App() {
 
+  const { theme, toggleTheme } = useTheme();
   const [currentWeather, setCurrentWeather] = useState(null);
   const [forecast, setForecast] = useState(null);
   const [unit, setUnit] = useState("C");
@@ -58,6 +61,7 @@ function App() {
             <img src="icons/g_cons/logo.svg" alt="logo" />
             <p className="logo-text">AtmosLens</p>
           </div>
+          <ThemeToggle theme={theme} onToggle={toggleTheme} />
         </nav>
         <div className="landing-content">
           <div className="landing-search-wrapper">
@@ -83,6 +87,7 @@ function App() {
           <img src="icons/g_cons/logo.svg" alt="logo" />
           <p className="logo-text">AtmosLens</p>
         </div>
+        <ThemeToggle theme={theme} onToggle={toggleTheme} />
       </nav>
 
       <div className="results-content">

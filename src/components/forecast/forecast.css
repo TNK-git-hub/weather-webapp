@@ -131,3 +131,33 @@
         grid-column: 1;
     }
 }
+
+/* ===== DARK THEME ===== */
+[data-theme='dark'] .forecast-card {
+    background: var(--surface);
+    border-color: var(--border);
+}
+
+[data-theme='dark'] .forecast-card:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+[data-theme='dark'] .forecast-header,
+[data-theme='dark'] .forecast-day,
+[data-theme='dark'] .forecast-high,
+[data-theme='dark'] .fd-value {
+    color: var(--text-strong);
+}
+
+[data-theme='dark'] .forecast-low,
+[data-theme='dark'] .fd-label {
+    color: var(--text-muted);
+}
+
+[data-theme='dark'] .forecast-row:hover {
+    background: var(--accent-hover);
+}
+
+[data-theme='dark'] .accordion__panel {
+    background: var(--surface-subtle);
+}
